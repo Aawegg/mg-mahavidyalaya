@@ -12,7 +12,7 @@
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,500;0,6..72,700;1,6..72,400;1,6..72,700&family=Kalam:wght@400;700&family=Hind:wght@400;500;600&family=Tiro+Devanagari+Marathi&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,500;0,6..72,700;1,6..72,400;1,6..72,700&family=Kalam:wght@400;700&family=Hind:wght@400;500;600&family=Eczar:wght@500;600;700;800&family=Martel+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
   /*
     HOW TO EDIT
@@ -34,7 +34,7 @@
     --muted: #5d6275;
     --line: #ddd3bf;
     --rule: rgba(36, 52, 143, .13);
-    --display: "Newsreader", "Tiro Devanagari Marathi", Georgia, serif;
+    --display: "Newsreader", "Eczar", Georgia, serif;
     --body: "Hind", system-ui, sans-serif;
     --hand: "Kalam", "Hind", cursive;
     --radius: 6px;
@@ -48,6 +48,12 @@
   .todo { background: #fff0a0; color: #6b4e00; padding: 0 4px; border-radius: 3px; font-style: normal; }
   .hand { font-family: var(--hand); }
 
+  /* Marathi typography: Eczar for headings, Martel Sans for text */
+  html[data-lang="mr"] body { font-family: "Martel Sans", "Hind", sans-serif; }
+  html[data-lang="mr"] em, html[data-lang="mr"] .principal blockquote { font-style: normal !important; }
+  html[data-lang="mr"] .hero h1 em, html[data-lang="mr"] h2.title em, html[data-lang="mr"] .enquire h3 em { font-weight: 800; }
+  html[data-lang="mr"] .brand-sub, html[data-lang="mr"] .vm h3, html[data-lang="mr"] .why h3, html[data-lang="mr"] .life h3, html[data-lang="mr"] .steps h3, html[data-lang="mr"] .faq summary { font-family: "Eczar", serif; font-weight: 600; }
+
   html[data-lang="en"] [data-l="mr"],
   html[data-lang="mr"] [data-l="en"] { display: none !important; }
 
@@ -57,7 +63,7 @@
   .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--indigo-deep); margin-right: auto; }
   .brand .seal-logo { width: 50px; height: 50px; flex: none; }
   .brand-name { font-family: var(--display); font-weight: 700; font-size: 22px; line-height: 1.05; white-space: nowrap; }
-  .brand-sub { font-family: "Tiro Devanagari Marathi", serif; font-size: 14px; color: var(--muted); }
+  .brand-sub { font-family: "Eczar", serif; font-size: 14px; color: var(--muted); }
   nav.main ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 2px; }
   nav.main a { display: block; padding: 8px 11px; text-decoration: none; color: var(--ink); font-size: 16px; font-weight: 500; border-radius: var(--radius); }
   nav.main a:hover { background: var(--paper-2); color: var(--indigo); }
@@ -92,7 +98,7 @@
   .hero h1 em { font-style: italic; font-weight: 700; color: var(--indigo); position: relative; white-space: nowrap; }
   .hero h1 em svg { position: absolute; left: -2%; bottom: -.12em; width: 104%; height: .32em; overflow: visible; }
   .hero h1 em svg path { fill: none; stroke: var(--marigold); stroke-width: 5; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw .9s 1.1s ease-out forwards; }
-  html[data-lang="mr"] .hero h1 { font-weight: 400; font-size: clamp(38px, 5.6vw, 70px); line-height: 1.2; letter-spacing: 0; }
+  html[data-lang="mr"] .hero h1 { font-weight: 600; font-size: clamp(38px, 5.6vw, 70px); line-height: 1.2; letter-spacing: 0; }
   .lead { font-size: 19.5px; color: #3a3f55; max-width: 560px; margin: 0 0 32px; }
   .cta-row { display: flex; flex-wrap: wrap; gap: 12px; }
 
@@ -132,7 +138,7 @@
   h2.title em { font-style: italic; font-weight: 700; color: var(--indigo); }
   section.dark h2.title { color: var(--paper); }
   section.dark h2.title em { color: var(--marigold); }
-  html[data-lang="mr"] h2.title { font-weight: 400; line-height: 1.25; letter-spacing: 0; }
+  html[data-lang="mr"] h2.title { font-weight: 600; line-height: 1.25; letter-spacing: 0; }
   .intro { color: var(--muted); max-width: 680px; margin: 0 0 44px; font-size: 18.5px; }
   section.dark .intro { color: #c3c8e6; }
 
@@ -208,7 +214,7 @@
   .enquire > * { position: relative; }
   .enquire h3 { font-family: var(--display); font-weight: 300; font-size: clamp(32px, 3.6vw, 46px); line-height: 1.05; margin: 0 0 10px; letter-spacing: -.02em; }
   .enquire h3 em { font-weight: 700; }
-  html[data-lang="mr"] .enquire h3 { font-weight: 400; line-height: 1.25; }
+  html[data-lang="mr"] .enquire h3 { font-weight: 600; line-height: 1.25; }
   .enquire p { margin: 0; color: #3b3510; }
   .enquire .btn-ink { box-shadow: 0 4px 0 #0b1133; }
   .enquire .btn-outline { border: 1.5px solid var(--indigo-deep); color: var(--indigo-deep); }
@@ -723,7 +729,7 @@
       <div>
         <img src="logo/mg-mahavidyalaya-seal-512.png" alt="MG Mahavidyalaya seal" width="96" height="96" style="width:96px;height:96px;margin-bottom:14px" loading="lazy">
         <p class="fname">MG Mahavidyalaya</p>
-        <p style="margin:0 0 12px; font-family:'Tiro Devanagari Marathi',serif">एम.जी. महाविद्यालय, गोंदिया</p>
+        <p style="margin:0 0 12px; font-family:'Eczar',serif">एम.जी. महाविद्यालय, गोंदिया</p>
         <p style="margin:0"><span data-l="en">Run by </span><span data-l="mr">संचालक संस्था: </span><span class="todo">[Trust / Society name]</span>.<br><span data-l="en">Affiliated to </span><span data-l="mr">संलग्नता: </span><span class="todo">[University name]</span>.</p>
         <div class="sister"><span data-l="en">Sister institution:</span><span data-l="mr">सहयोगी संस्था:</span> <b style="color:var(--paper)">MG Paramedical College, Gondia</b></div>
       </div>
