@@ -215,6 +215,14 @@
   .gallery { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 200px 200px; gap: 12px; }
   .gallery figure { margin: 0; border: 1.5px dashed var(--line); border-radius: 4px; display: grid; place-items: center; color: var(--muted); font-family: var(--hand); font-size: 17px; background: repeating-linear-gradient(to bottom, transparent 0 23px, var(--rule) 23px 24px); }
   .gallery figure:first-child { grid-row: span 2; }
+  .gallery figure.ph { position: relative; overflow: hidden; border: 0; background: var(--paper-2); }
+  .gallery figure.ph img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
+  .gallery figure.ph:hover img { transform: scale(1.04); }
+  .gallery figure.ph figcaption { position: absolute; left: 12px; bottom: 12px; background: var(--card); color: var(--indigo-deep); font-family: var(--hand); font-size: 16px; padding: 3px 12px; border-radius: 3px; transform: rotate(-1.5deg); box-shadow: 0 4px 10px rgba(0,0,0,.15); }
+  .snap { margin: 0 0 28px; background: var(--card); padding: 10px 10px 4px; transform: rotate(1.4deg); box-shadow: 0 1px 0 var(--line), 0 18px 34px -18px rgba(20,29,79,.45); position: relative; }
+  .snap::before { content: ""; position: absolute; top: -12px; left: 50%; width: 100px; height: 26px; transform: translateX(-50%) rotate(-3deg); background: rgba(242,165,22,.45); }
+  .snap img { width: 100%; height: auto; aspect-ratio: 16/7; object-fit: cover; }
+  .snap figcaption { font-family: var(--hand); color: var(--indigo); text-align: center; padding: 6px 0 2px; font-size: 17px; }
 
   /* FAQ */
   .faq { max-width: 840px; border-top: 2px solid var(--indigo-deep); }
@@ -444,7 +452,12 @@
           <span data-l="mr">लहान वर्गांमुळे शिक्षक प्रत्येक विद्यार्थ्याला नावाने ओळखतात. अभ्यासासोबतच आम्ही शिस्त, एनएसएस, खेळ आणि सांस्कृतिक उपक्रमांवर भर देतो.</span>
         </p>
       </div>
-      <div class="vm reveal">
+      <div class="reveal">
+      <figure class="snap">
+        <img src="photos/building.jpg" alt="MG campus building in Murri, Gondia" loading="lazy" width="1137" height="407">
+        <figcaption><span data-l="en">Our campus, Murri, Gondia</span><span data-l="mr">आमचा परिसर, मुर्री, गोंदिया</span></figcaption>
+      </figure>
+      <div class="vm">
         <div>
           <h3><span data-l="en">Vision</span><span data-l="mr">दृष्टी</span></h3>
           <p><span data-l="en">Quality higher education within reach of every student in Gondia, whatever their background.</span><span data-l="mr">कोणत्याही पार्श्वभूमीच्या गोंदियातील प्रत्येक विद्यार्थ्याच्या आवाक्यात दर्जेदार उच्च शिक्षण.</span></p>
@@ -453,6 +466,7 @@
           <h3><span data-l="en">Mission</span><span data-l="mr">ध्येय</span></h3>
           <p><span data-l="en">Affordable teaching, good values and real skills, so that our students leave ready for jobs, further study and responsible citizenship.</span><span data-l="mr">परवडणारे शिक्षण, चांगली मूल्ये आणि खरी कौशल्ये, जेणेकरून आमचे विद्यार्थी नोकरी, पुढील शिक्षण आणि जबाबदार नागरिकत्वासाठी तयार होतील.</span></p>
         </div>
+      </div>
       </div>
     </div>
 
@@ -644,12 +658,11 @@
     <p class="label reveal"><span data-l="en">Campus</span><span data-l="mr">परिसर</span></p>
     <h2 class="title reveal"><span data-l="en">A look <em>around.</em></span><span data-l="mr">परिसराची <em>एक झलक.</em></span></h2>
     <div class="gallery reveal">
-      <!-- Replace each <figure> with: <img src="photo.jpg" alt="..." style="width:100%;height:100%;object-fit:cover;border-radius:4px"> -->
-      <figure><span data-l="en">College building</span><span data-l="mr">महाविद्यालय इमारत</span></figure>
-      <figure><span data-l="en">Classroom</span><span data-l="mr">वर्गखोली</span></figure>
-      <figure><span data-l="en">Library</span><span data-l="mr">ग्रंथालय</span></figure>
-      <figure><span data-l="en">Science lab</span><span data-l="mr">विज्ञान प्रयोगशाळा</span></figure>
-      <figure><span data-l="en">Inauguration</span><span data-l="mr">उद्घाटन</span></figure>
+      <figure class="ph"><img src="photos/building-side.jpg" alt="College building" loading="lazy"><figcaption><span data-l="en">College building</span><span data-l="mr">महाविद्यालय इमारत</span></figcaption></figure>
+      <figure class="ph"><img src="photos/hall.jpg" alt="Hall with projector" loading="lazy"><figcaption><span data-l="en">Hall with projector</span><span data-l="mr">प्रोजेक्टरसह सभागृह</span></figcaption></figure>
+      <figure class="ph"><img src="photos/office.jpg" alt="College office" loading="lazy"><figcaption><span data-l="en">Office</span><span data-l="mr">कार्यालय</span></figcaption></figure>
+      <figure class="ph"><img src="photos/building.jpg" alt="Front of the campus" loading="lazy"><figcaption><span data-l="en">Campus front</span><span data-l="mr">परिसराचा दर्शनी भाग</span></figcaption></figure>
+      <figure class="ph"><img src="photos/view.jpg" alt="View of Gondia from the campus roof" loading="lazy"><figcaption><span data-l="en">View from the roof</span><span data-l="mr">छतावरून दिसणारे गोंदिया</span></figcaption></figure>
     </div>
   </div>
 </section>
