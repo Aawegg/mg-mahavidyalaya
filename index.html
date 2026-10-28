@@ -388,18 +388,22 @@
     .gallery.g3 { grid-template-columns: 1.773fr 1.333fr; grid-template-rows: auto; }
     .gallery.g3 figure:nth-child(1) { grid-column: 1 / -1; }
     footer .cols { grid-template-columns: 1fr; }
-    /* index table becomes cards */
-    table, thead, tbody, tr, td { display: block; }
+    /* index table becomes one clean card per course */
+    table, thead, tbody, td { display: block; }
     thead { display: none; }
-    tbody tr { padding: 20px; border-bottom: 1px solid var(--rule); position: relative; }
+    tbody tr { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 16px; padding: 22px 20px; border-bottom: 2px solid var(--indigo-deep); }
     tbody tr:last-child { border-bottom: 0; }
     td, td + td { padding: 0; border: 0; }
-    td.sr { position: absolute; right: 18px; top: 16px; width: auto; }
-    td.prog { margin-bottom: 10px; padding-right: 40px; }
-    td.subj { margin-bottom: 10px; }
-    td[data-k] { display: flex; justify-content: space-between; gap: 12px; padding: 6px 0; border-top: 1px dotted var(--line); font-size: 15.5px; }
-    td[data-k]::before { content: attr(data-k); font-weight: 600; font-size: 13px; letter-spacing: .06em; text-transform: uppercase; color: var(--red); align-self: center; }
-    html[data-lang="mr"] td[data-k]::before { content: attr(data-k-mr); font-size: 15px; letter-spacing: 0; }
+    td.sr { display: none; }
+    td.prog { grid-column: 1 / -1; order: 0; padding-bottom: 14px; border-bottom: 1px dashed var(--line); }
+    td.prog b { font-size: 26px; }
+    td.prog span { display: block; margin-top: 4px; }
+    td[data-k] { font-size: 16px; font-weight: 600; color: var(--indigo-deep); line-height: 1.45; }
+    td[data-k]::before { content: attr(data-k); display: block; margin-bottom: 2px; font-weight: 600; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--red); }
+    html[data-lang="mr"] td[data-k]::before { content: attr(data-k-mr); font-size: 14px; letter-spacing: 0; }
+    td[data-k="Duration"] { order: 1; }
+    td[data-k="Seats"] { order: 2; }
+    td[data-k="Eligibility"] { order: 3; grid-column: 1 / -1; font-weight: 500; background: var(--paper); padding: 10px 12px; border-radius: 4px; }
     .index-top, .index-foot { padding: 14px 20px; }
     .wa-float { display: none; }
     .mbar { display: grid; grid-template-columns: 1fr 1.3fr; position: fixed; left: 0; right: 0; bottom: 0; z-index: 60; background: var(--indigo-deep); padding: 8px; gap: 8px; box-shadow: 0 -6px 20px rgba(0,0,0,.2); }
