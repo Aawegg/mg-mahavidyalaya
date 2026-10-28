@@ -144,18 +144,17 @@
   .notice {
     background: var(--card); padding: 34px 26px 24px; position: relative; transform: rotate(-1.4deg);
     box-shadow: 0 1px 0 var(--line), 0 22px 40px -20px rgba(20, 29, 79, .4);
-    background-image: repeating-linear-gradient(to bottom, transparent 0 33px, rgba(36,52,143,.08) 33px 34px);
-    background-position: 0 58px;
   }
   .notice::before { /* tape */
     content: ""; position: absolute; top: -14px; left: 50%; width: 120px; height: 30px; transform: translateX(-50%) rotate(2deg);
     background: rgba(242, 165, 22, .45); border-left: 2px dashed rgba(255,255,255,.5); border-right: 2px dashed rgba(255,255,255,.5);
   }
-  .notice h2 { margin: 0 0 8px; font-family: var(--display); font-weight: 700; font-size: 26px; color: var(--red); display: flex; justify-content: space-between; align-items: baseline; }
-  .notice h2 small { font: 400 15px var(--hand); color: var(--muted); }
+  .notice h2 { margin: 0 0 8px; padding-bottom: 8px; border-bottom: 2px solid var(--red); font-family: var(--display); font-weight: 700; font-size: 26px; line-height: 1.2; color: var(--red); display: flex; justify-content: space-between; align-items: center; }
+  .notice h2 small { font: 400 16px/1 var(--hand); color: var(--muted); }
   .notice ul { list-style: none; margin: 0; padding: 0; }
-  .notice li { padding: 8px 0 8px 22px; position: relative; font-size: 16.5px; line-height: 1.5; }
-  .notice li::before { content: "\2192"; position: absolute; left: 0; color: var(--indigo); font-weight: 600; }
+  .notice li { padding: 9px 0 9px 22px; position: relative; font-size: 16.5px; line-height: 1.5; border-bottom: 1px dashed var(--line); }
+  .notice li:last-child { border-bottom: 0; }
+  .notice li::before { content: "\2192"; position: absolute; left: 0; top: 9px; color: var(--indigo); font-weight: 600; }
   .circled { position: relative; font-weight: 600; color: var(--indigo-deep); margin: 0 12px 0 4px; }
   .circled svg { position: absolute; inset: -10px -14px; width: calc(100% + 28px); height: calc(100% + 20px); overflow: visible; pointer-events: none; }
   .circled svg path { fill: none; stroke: var(--red); stroke-width: 2; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 1s 1.6s ease-in-out forwards; }
@@ -351,7 +350,8 @@
     .hero .wrap, .about, .adm-grid, .contact { grid-template-columns: 1fr; }
     .hero .wrap { gap: 48px; padding: 52px 0 64px; }
     .hero::before { left: 6px; }
-    .notice { max-width: 470px; }
+    .notice { max-width: 470px; transform: none; }
+    .notice.rise { animation-name: rise; }
     .why { grid-template-columns: 1fr 1fr; }
     .why > div, .why > div:not(:nth-child(3n+1)) { padding: 26px 22px 28px 0; border-left: 0; }
     .why > div:nth-child(2n) { padding-left: 22px; border-left: 1px solid var(--line); }
