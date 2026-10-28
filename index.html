@@ -267,6 +267,7 @@
   .gallery { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 200px 200px; gap: 12px; }
   .gallery figure { margin: 0; border: 1.5px dashed var(--line); border-radius: 4px; display: grid; place-items: center; color: var(--muted); font-family: var(--hand); font-size: 17px; background: repeating-linear-gradient(to bottom, transparent 0 23px, var(--rule) 23px 24px); }
   .gallery figure:first-child { grid-row: span 2; }
+  .gallery.g3 figure:not(:first-child) { grid-column: span 2; }
   .gallery figure.ph { position: relative; overflow: hidden; border: 0; background: var(--paper-2); }
   .gallery figure.ph img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
   .gallery figure.ph:hover img { transform: scale(1.04); }
@@ -371,6 +372,8 @@
     .steps div::after { display: none; }
     .gallery { grid-template-columns: 1fr 1fr; grid-template-rows: 180px 120px 120px; }
     .gallery figure:first-child { grid-column: span 2; grid-row: auto; }
+    .gallery.g3 { grid-template-rows: 220px 150px; }
+    .gallery.g3 figure:not(:first-child) { grid-column: span 1; }
     footer .cols { grid-template-columns: 1fr; }
     /* index table becomes cards */
     table, thead, tbody, tr, td { display: block; }
@@ -504,7 +507,7 @@
       </div>
       <div class="reveal">
       <figure class="snap">
-        <img src="photos/campus2-building.jpg" alt="MG campus building in Murri, Gondia" loading="lazy" width="1600" height="573">
+        <img src="photos/mg-entrance.jpg" alt="Entrance of M.G. Mahavidyalaya, Gondia" loading="lazy" width="1600" height="900" style="object-position:50% 45%">
         <figcaption><span data-l="en">Our campus, Murri, Gondia</span><span data-l="mr">आमचा परिसर, मुर्री, गोंदिया</span></figcaption>
       </figure>
       <div class="vm">
@@ -726,12 +729,10 @@
   <div class="wrap">
     <p class="label reveal"><span data-l="en">Campus</span><span data-l="mr">परिसर</span></p>
     <h2 class="title reveal"><span data-l="en">A look <em>around.</em></span><span data-l="mr">परिसराची <em>एक झलक.</em></span></h2>
-    <div class="gallery reveal">
-      <figure class="ph"><img src="photos/campus2-building-side.jpg" alt="College building" loading="lazy"><figcaption><span data-l="en">College building</span><span data-l="mr">महाविद्यालय इमारत</span></figcaption></figure>
-      <figure class="ph"><img src="photos/campus2-hall.jpg" alt="Hall with projector" loading="lazy"><figcaption><span data-l="en">Hall with projector</span><span data-l="mr">प्रोजेक्टरसह सभागृह</span></figcaption></figure>
-      <figure class="ph"><img src="photos/campus2-office.jpg" alt="College office" loading="lazy"><figcaption><span data-l="en">Office</span><span data-l="mr">कार्यालय</span></figcaption></figure>
-      <figure class="ph"><img src="photos/campus2-building.jpg" alt="Front of the campus" loading="lazy"><figcaption><span data-l="en">Campus front</span><span data-l="mr">परिसराचा दर्शनी भाग</span></figcaption></figure>
-      <figure class="ph"><img src="photos/campus-view.jpg" alt="View of Gondia from the campus roof" loading="lazy"><figcaption><span data-l="en">View from the roof</span><span data-l="mr">छतावरून दिसणारे गोंदिया</span></figcaption></figure>
+    <div class="gallery g3 reveal">
+      <figure class="ph"><img src="photos/mg-entrance.jpg" alt="Entrance of M.G. Mahavidyalaya" loading="lazy"><figcaption><span data-l="en">College entrance</span><span data-l="mr">महाविद्यालयाचे प्रवेशद्वार</span></figcaption></figure>
+      <figure class="ph"><img src="photos/mg-hall.jpg" alt="Hall with projector" loading="lazy"><figcaption><span data-l="en">Hall with projector</span><span data-l="mr">प्रोजेक्टरसह सभागृह</span></figcaption></figure>
+      <figure class="ph"><img src="photos/mg-office.jpg" alt="College office" loading="lazy"><figcaption><span data-l="en">Office</span><span data-l="mr">कार्यालय</span></figcaption></figure>
     </div>
   </div>
 </section>
