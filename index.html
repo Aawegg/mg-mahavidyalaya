@@ -193,6 +193,7 @@
   .principal { display: grid; grid-template-columns: 220px 1fr; gap: 36px; align-items: center; margin-top: 64px; padding: 36px; background: var(--card); border: 1px solid var(--line); border-radius: 4px; position: relative; }
   .principal::before { content: "\201C"; position: absolute; right: 26px; top: -10px; font: 700 140px/1 var(--display); color: rgba(242,165,22,.35); }
   .photo-ph { aspect-ratio: 4/5; border: 1.5px dashed var(--indigo); border-radius: 4px; display: grid; place-items: center; text-align: center; color: var(--muted); font-size: 14px; background: repeating-linear-gradient(to bottom, transparent 0 15px, var(--rule) 15px 16px); }
+  .nw { white-space: nowrap; }
   .pillars { margin: -16px 0 30px; font-weight: 600; font-size: 16px; color: var(--indigo); letter-spacing: .02em; }
   .vm ul { margin: 0; padding-left: 20px; }
   .vm li { margin: 6px 0; }
@@ -224,8 +225,8 @@
 
   /* Why us */
   .why { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--line); }
-  .why div { padding: 30px 28px 34px 0; border-bottom: 1px solid var(--line); }
-  .why div:not(:nth-child(3n+1)) { padding-left: 28px; border-left: 1px solid var(--line); }
+  .why > div { padding: 30px 28px 34px 0; border-bottom: 1px solid var(--line); }
+  .why > div:not(:nth-child(3n+1)) { padding-left: 28px; border-left: 1px solid var(--line); }
   .why .n { font-family: var(--hand); font-size: 40px; font-weight: 700; color: var(--marigold-dark); line-height: 1; }
   .why h3 { font-family: var(--display); font-size: 24px; font-weight: 500; margin: 10px 0 6px; color: var(--indigo-deep); }
   .why p { margin: 0; color: var(--muted); font-size: 16.5px; }
@@ -247,10 +248,11 @@
   .steps h3 { font-family: var(--display); font-size: 24px; font-weight: 700; color: var(--indigo-deep); margin: 0 0 4px; }
   .steps p { margin: 0; color: var(--muted); font-size: 16.5px; }
   .adm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: stretch; }
-  .checklist { background: var(--card); border: 1px solid var(--line); border-radius: 4px; padding: 26px 28px; background-image: repeating-linear-gradient(to bottom, transparent 0 41px, var(--rule) 41px 42px); background-position: 0 92px; }
+  .checklist { background: var(--card); border: 1px solid var(--line); border-radius: 4px; padding: 26px 28px; }
   .checklist h3 { margin: 0 0 2px; font-family: var(--display); font-size: 26px; color: var(--indigo-deep); }
   .checklist > p { margin: 0 0 12px; color: var(--muted); font-size: 15.5px; font-family: var(--hand); }
-  .checklist label { display: flex; gap: 12px; align-items: center; min-height: 42px; cursor: pointer; }
+  .checklist label { display: flex; gap: 12px; align-items: center; min-height: 42px; padding: 8px 0; border-bottom: 1px dashed var(--line); cursor: pointer; line-height: 1.4; }
+  .checklist label:last-child { border-bottom: 0; }
   .checklist input { appearance: none; width: 20px; height: 20px; border: 1.5px solid var(--indigo); border-radius: 3px; margin: 0; flex: none; display: grid; place-items: center; cursor: pointer; background: var(--card); }
   .checklist input:checked { background: var(--indigo); }
   .checklist input:checked::after { content: "\2713"; color: var(--paper); font-size: 14px; font-weight: 700; }
@@ -351,8 +353,8 @@
     .hero::before { left: 6px; }
     .notice { max-width: 470px; }
     .why { grid-template-columns: 1fr 1fr; }
-    .why div, .why div:not(:nth-child(3n+1)) { padding: 26px 22px 28px 0; border-left: 0; }
-    .why div:nth-child(2n) { padding-left: 22px; border-left: 1px solid var(--line); }
+    .why > div, .why > div:not(:nth-child(3n+1)) { padding: 26px 22px 28px 0; border-left: 0; }
+    .why > div:nth-child(2n) { padding-left: 22px; border-left: 1px solid var(--line); }
     .life { grid-template-columns: 1fr 1fr; }
     .steps { grid-template-columns: 1fr 1fr; row-gap: 36px; }
     .steps div:nth-child(2)::after { display: none; }
@@ -372,9 +374,13 @@
     .lead { font-size: 17.5px; }
     .cta-row .btn { flex: 1 1 auto; justify-content: center; }
     .principal { grid-template-columns: 1fr; padding: 26px; gap: 22px; }
+    .principal .pp { max-width: 220px; }
+    .principal blockquote, html[data-lang="mr"] .principal blockquote { font-size: 18.5px; }
+    .scribble { font-size: 18px; }
+    .pillars { font-size: 15px; line-height: 1.7; }
     .principal .photo-ph { max-width: 160px; }
     .why, .life { grid-template-columns: 1fr; }
-    .why div:nth-child(2n) { padding-left: 0; border-left: 0; }
+    .why > div:nth-child(2n) { padding-left: 0; border-left: 0; }
     .steps { grid-template-columns: 1fr; }
     .steps div::after { display: none; }
     .gallery { grid-template-columns: 1fr 1fr; grid-template-rows: 180px 120px 120px; }
@@ -453,8 +459,8 @@
         <span data-l="mr">एम.जी. महाविद्यालय, गोंदिया येथे मुलींसाठी करिअरभिमुख बी.एस्सी. अभ्यासक्रमांसह विज्ञान क्षेत्रात तुमचे भविष्य घडवा. एस.एन.डी.टी. महिला विद्यापीठ, मुंबई संलग्न.</span>
       </p>
       <p class="pillars rise" style="--d:2">
-        <span data-l="en">Quality Education &middot; Practical Learning &middot; Career-Focused Courses</span>
-        <span data-l="mr">दर्जेदार शिक्षण &middot; प्रात्यक्षिक अभ्यास &middot; करिअरभिमुख अभ्यासक्रम</span>
+        <span data-l="en"><span class="nw">Quality Education</span> &middot; <span class="nw">Practical Learning</span> &middot; <span class="nw">Career-Focused Courses</span></span>
+        <span data-l="mr"><span class="nw">दर्जेदार शिक्षण</span> &middot; <span class="nw">प्रात्यक्षिक अभ्यास</span> &middot; <span class="nw">करिअरभिमुख अभ्यासक्रम</span></span>
       </p>
       <div class="cta-row rise" style="--d:3">
         <a class="btn btn-gold" data-wa href="#contact"><svg><use href="#i-wa"/></svg><span data-l="en">WhatsApp us</span><span data-l="mr">WhatsApp करा</span></a>
