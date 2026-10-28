@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mgmahavidyalayagondia.in/sitemap.xml
