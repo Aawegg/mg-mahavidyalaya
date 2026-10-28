@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MG Mahavidyalaya, Gondia | B.Sc. for Girls: CLS / MLT &amp; Microbiology</title>
-<meta name="description" content="MG Mahavidyalaya, Gondia: a science college for girls. B.Sc. Clinical Laboratory Science (CLS / MLT) and B.Sc. Microbiology. Affiliated to SNDT Women's University, Mumbai. Admissions open for the first batch, 2026-27.">
+<meta name="description" content="MG Mahavidyalaya, Gondia: a science college for girls. B.Sc. Clinical Laboratory Science (CLS / MLT) and B.Sc. Microbiology. Affiliated to SNDT Women's University, Mumbai. Admissions open for 2026-27.">
 <meta name="theme-color" content="#141d4f">
 <link rel="icon" type="image/png" href="logo/logo-favicon-64.png">
 <link rel="apple-touch-icon" href="logo/logo-apple-touch.png">
@@ -319,6 +319,9 @@
   .wa-float { position: fixed; right: 22px; bottom: 22px; z-index: 60; width: 60px; height: 60px; border-radius: 50%; background: #25d366; color: #fff; display: grid; place-items: center; box-shadow: 0 10px 24px rgba(0,0,0,.25); transition: transform .15s; }
   .wa-float:hover { transform: scale(1.07); }
   .wa-float svg { width: 32px; height: 32px; }
+  .to-top { position: fixed; right: 30px; bottom: 96px; z-index: 60; width: 46px; height: 46px; border-radius: 50%; background: var(--indigo-deep); color: var(--paper); display: grid; place-items: center; box-shadow: 0 8px 20px rgba(0,0,0,.22); opacity: 0; transform: translateY(12px); pointer-events: none; transition: opacity .25s, transform .25s; }
+  .to-top.show { opacity: 1; transform: none; pointer-events: auto; }
+  .to-top svg { width: 22px; height: 22px; }
   .mbar { display: none; }
 
   /* ---------- Motion ---------- */
@@ -406,6 +409,7 @@
     td[data-k="Eligibility"] { order: 3; grid-column: 1 / -1; font-weight: 500; background: var(--paper); padding: 10px 12px; border-radius: 4px; }
     .index-top, .index-foot { padding: 14px 20px; }
     .wa-float { display: none; }
+    .to-top { right: 16px; bottom: 80px; width: 44px; height: 44px; }
     .mbar { display: grid; grid-template-columns: 1fr 1.3fr; position: fixed; left: 0; right: 0; bottom: 0; z-index: 60; background: var(--indigo-deep); padding: 8px; gap: 8px; box-shadow: 0 -6px 20px rgba(0,0,0,.2); }
     .mbar a { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; border-radius: var(--radius); font-weight: 600; text-decoration: none; color: #fff; }
     .mbar a svg { width: 20px; height: 20px; }
@@ -423,7 +427,7 @@
 
 <header class="site">
   <div class="wrap">
-    <a class="brand" href="#top" id="top" aria-label="MG Mahavidyalaya, Gondia, home">
+    <a class="brand" href="#" data-top id="top" aria-label="MG Mahavidyalaya, Gondia, home">
       <img class="seal-logo" src="logo/mg-mahavidyalaya-logo-512.png" alt="" width="46" height="46">
       <span>
         <span class="brand-name">MG Mahavidyalaya</span><br>
@@ -432,6 +436,7 @@
     </a>
     <nav class="main" id="nav" aria-label="Main">
       <ul>
+        <li><a href="#" data-top><span data-l="en">Home</span><span data-l="mr">मुख्यपृष्ठ</span></a></li>
         <li><a href="#about"><span data-l="en">About</span><span data-l="mr">आमच्याविषयी</span></a></li>
         <li><a href="#courses"><span data-l="en">Courses</span><span data-l="mr">अभ्यासक्रम</span></a></li>
         <li><a href="#why"><span data-l="en">Why us</span><span data-l="mr">आम्हीच का</span></a></li>
@@ -475,7 +480,7 @@
     <aside class="notice rise" style="--d:3" aria-label="Notice board">
       <h2><span data-l="en">Notice</span><span data-l="mr">सूचना</span> <small>2026-27</small></h2>
       <ul>
-        <li><span class="circled"><span data-l="en">Admissions open!</span><span data-l="mr">प्रवेश सुरू!</span><svg viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M8 22 C 6 6, 90 2, 95 18 C 99 34, 20 40, 6 26 C 2 20, 20 10, 40 9"/></svg></span> <span data-l="en">First batch, B.Sc. (CLS / MLT) &amp; B.Sc. Microbiology</span><span data-l="mr">पहिली बॅच, बी.एस्सी. (CLS / MLT) व बी.एस्सी. मायक्रोबायोलॉजी</span></li>
+        <li><span class="circled"><span data-l="en">Admissions open!</span><span data-l="mr">प्रवेश सुरू!</span><svg viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M8 22 C 6 6, 90 2, 95 18 C 99 34, 20 40, 6 26 C 2 20, 20 10, 40 9"/></svg></span> <span data-l="en">B.Sc. (CLS / MLT) &amp; B.Sc. Microbiology</span><span data-l="mr">बी.एस्सी. (CLS / MLT) व बी.एस्सी. मायक्रोबायोलॉजी</span></li>
         <li><b><span data-l="en">Admission for girls only.</span><span data-l="mr">प्रवेश फक्त मुलींसाठी.</span></b></li>
         <li><span data-l="en">120 seats in each course.</span><span data-l="mr">प्रत्येक अभ्यासक्रमात १२० जागा.</span></li>
         <li><span data-l="en">Office open Monday to Saturday, 11 AM to 5 PM.</span><span data-l="mr">कार्यालय सोमवार ते शनिवार, सकाळी ११ ते सायं. ५.</span></li>
@@ -825,6 +830,7 @@
       <div>
         <h4><span data-l="en">Pages</span><span data-l="mr">पाने</span></h4>
         <ul>
+          <li><a href="#" data-top><span data-l="en">Home</span><span data-l="mr">मुख्यपृष्ठ</span></a></li>
           <li><a href="#about"><span data-l="en">About</span><span data-l="mr">आमच्याविषयी</span></a></li>
           <li><a href="#courses"><span data-l="en">Courses</span><span data-l="mr">अभ्यासक्रम</span></a></li>
           <li><a href="#admissions"><span data-l="en">Admissions</span><span data-l="mr">प्रवेश</span></a></li>
@@ -844,6 +850,7 @@
   </div>
 </footer>
 
+<a class="to-top" href="#" data-top aria-label="Back to top"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
 <a class="wa-float" data-wa href="#contact" aria-label="Chat on WhatsApp"><svg><use href="#i-wa"/></svg></a>
 <div class="mbar">
   <a class="call" data-call href="#contact"><svg><use href="#i-call"/></svg><span data-l="en">Call</span><span data-l="mr">कॉल करा</span></a>
@@ -889,6 +896,16 @@
   } else {
     document.querySelectorAll(".reveal").forEach(el => el.classList.add("in"));
   }
+
+  // Home / back-to-top
+  document.querySelectorAll("[data-top]").forEach(a => a.addEventListener("click", e => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    nav.classList.remove("open"); btn.setAttribute("aria-expanded", false);
+  }));
+  const toTop = document.querySelector(".to-top");
+  const onScroll = () => toTop.classList.toggle("show", window.scrollY > 700);
+  window.addEventListener("scroll", onScroll, { passive: true }); onScroll();
 
   document.getElementById("yr").textContent = new Date().getFullYear();
 </script>
